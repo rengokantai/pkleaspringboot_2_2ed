@@ -34,3 +34,24 @@ import reactor.core.publisher.Flux;
 note
 - @Configuration marks this class as a source of beans
 - @Bean indicates that the return value of init() is a Spring Bean
+
+
+
+
+### Bundling up the application as a runnable JAR file
+```
+./gradlew clean build
+SERVER_PORT=8000 java -jar build/libs/learning-spring-boot-0.0.1-SNAPSHOT.jar
+```
+
+### Deploying to Cloud Foundry
+```
+cf push appname -p build/libs/appname.jar
+```
+
+
+### Metrics
+```
+endpoints.metrics.enabled=true
+```
+
